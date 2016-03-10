@@ -1,7 +1,7 @@
 {
     "port":            {{ codem_transcode_port }},
     "access_log":      "{{ codem_transcode_access_log }}",
-    "database":        "{{ codem_transcode_database }}",
+    "database":        "{{ codem_transcode_database_dir }}/{{ codem_transcode_database_name }}",
     "slots":           "{{ codem_transcode_slots }}",
     "interface":       "{{ codem_transcode_interface }}",
     "encoder":         "{{ codem_transcode_encoder }}",

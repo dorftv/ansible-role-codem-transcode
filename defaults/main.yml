@@ -6,7 +6,8 @@ codem_transcode_port: 8080
 codem_transcode_access_log: /var/log/access_log
 
 #only sqllite available. codem also supports others.
-codem_transcode_database:  /var/db/jobs.db
+codem_transcode_database_dir:  /var/db
+codem_transcode_database_name:  jobs.db
 codem_transcode_slots: 1
 codem_transcode_interface: 
 codem_transcode_encoder: ffmpeg
