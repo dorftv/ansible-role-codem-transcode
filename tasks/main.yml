@@ -13,7 +13,8 @@
 # Git
 
 - name: Download Codem Transcode
-  git: repo=https://github.com/madebyhiro/codem-transcode.git 
+#  git: repo=https://github.com/madebyhiro/codem-transcode.git 
+  git: repo=https://github.com/hatsch/codem-transcode.git 
        dest={{ codem_transcode_dir }}/
        accept_hostkey=yes
        version={{ codem_transcode_version }}
