@@ -11,7 +11,7 @@ codem_transcode_slots: 1
 codem_transcode_interface: 
 codem_transcode_encoder: ffmpeg
 codem_transcode_scratch_dir: /tmp
-codem_transcode_use_scratchdir: false
+codem_transcode_use_scratchdir: "false"
 codem_transcode_ffprobe: ffprobe
 
 
