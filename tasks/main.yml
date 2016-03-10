@@ -1,14 +1,14 @@
-- name: Add nodejs repository from node-source
-  shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-  args:
-    executable: /bin/bash
+#- name: Add nodejs repository from node-source
+#  shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+#  args:
+#    executable: /bin/bash
 
 - name: install dependencies
   action: apt pkg={{ item }} state=present
   with_items:
     - sqlite3
     - libsqlite3-dev
-    - nodejs
+#    - nodejs
    
 # Git
 
