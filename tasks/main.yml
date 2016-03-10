@@ -1,0 +1,27 @@
+- name: Add nodejs repository from node-source
+  shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+  args:
+    executable: /bin/bash
+
+- name: install dependencies
+  action: apt pkg={{ item }} state=present
+  with_items:
+    - sqlite3
+    - libsqlite3-dev
+    - nodejs
+   
+# Git
+
+- name: Download Codem Transcode
+  git: repo=https://github.com/madebyhiro/codem-transcode.git 
+       dest={{ codem_transcode_dir }}/
+       accept_hostkey=yes
+       version={{ codem_transcode_version }}
+       force=yes
+    
+- name: Create Config for Codem Transcode
+  template: >
+    src=config.json.j2 dest={{codem_transcode_dir }}/config.json
+
+- name: Run npm install
+  command:  npm install  chdir={{ codem_transcode_dir }}  creates="{{ codem_transcode_dir }}/node_modules"
